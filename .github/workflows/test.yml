@@ -1,0 +1,24 @@
+name: test-library
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build test image
+      run: docker build --tag test --file Dockerfile.Test .
+    - name: Run library tests
+      run: docker run --rm --volume $GITHUB_WORKSPACE/coveragereport:/source/coveragereport test
+    - name: Archive coverage report
+      uses: actions/upload-artifact@v3
+      with:
+        name: code-coverage-report
+        path: coveragereport

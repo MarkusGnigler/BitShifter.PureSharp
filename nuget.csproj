@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <PackageVersion>1.0.0</PackageVersion>
+        <Configuration>Release</Configuration>
+        <PackageId>BitShifter.PureSharp</PackageId>
+        <Title>Add your project title</Title>
+        <Authors>Add your name</Authors>
+        <Description>Add your project description</Description>
+        <PackageTags>Add your SEO tags [library;unit-tests;xunit;tdd]</PackageTags>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+        <IncludeContentInPack>true</IncludeContentInPack>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <ContentTargetFolders>content</ContentTargetFolders>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath=""/>
+        <Content Include=".\**\*" Exlude=".\**\bin\**;.\**\obj\**;.\artifacts\**;nuget.csproj" />
+        <Compile Remove="**\*" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,17 @@
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+
+WORKDIR /sln
+
+COPY . .
+
+ENV DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+RUN dotnet build *.sln && \
+   dotnet pack nuget.csproj \
+      # --no-build \
+      --configuration Release \
+      --output artifacts 
+
+
+ENTRYPOINT [ "dotnet", "nuget", "push", "artifacts/*.nupkg", "--skip-duplicate" ]
+CMD [ "--source", "https://api.nuget.org/v3/index.json" ]

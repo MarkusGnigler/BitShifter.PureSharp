@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{6588F973-3BE9-4658-8CE7-4E0637A79243}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitShifter.PureSharp", "Src\BitShifter.PureSharp\BitShifter.PureSharp.csproj", "{C5DC9265-697E-48D7-A77B-A59BE1D21940}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5654584F-3A23-4A67-8666-A6BF9DBEAC57}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitShifter.PureSharp.Tests", "Tests\BitShifter.PureSharp.Tests\BitShifter.PureSharp.Tests.csproj", "{5D70E882-33C7-49D3-8AC4-2F7EED72FE6D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{4BF85BDE-3379-4FFF-B49E-46BCD2023276}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\index.md = Docs\index.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{01797B93-576E-4D76-8083-6A4AFB2FE43B}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\Scripts\pack-and-publish.ps1 = Docs\Scripts\pack-and-publish.ps1
+		Docs\Scripts\refresh-sln.ps1 = Docs\Scripts\refresh-sln.ps1
+		Docs\Scripts\run-tests.ps1 = Docs\Scripts\run-tests.ps1
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5DC9265-697E-48D7-A77B-A59BE1D21940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5DC9265-697E-48D7-A77B-A59BE1D21940}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5DC9265-697E-48D7-A77B-A59BE1D21940}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5DC9265-697E-48D7-A77B-A59BE1D21940}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D70E882-33C7-49D3-8AC4-2F7EED72FE6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D70E882-33C7-49D3-8AC4-2F7EED72FE6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D70E882-33C7-49D3-8AC4-2F7EED72FE6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D70E882-33C7-49D3-8AC4-2F7EED72FE6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C5DC9265-697E-48D7-A77B-A59BE1D21940} = {6588F973-3BE9-4658-8CE7-4E0637A79243}
+		{5D70E882-33C7-49D3-8AC4-2F7EED72FE6D} = {5654584F-3A23-4A67-8666-A6BF9DBEAC57}
+		{01797B93-576E-4D76-8083-6A4AFB2FE43B} = {4BF85BDE-3379-4FFF-B49E-46BCD2023276}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {10AC29BC-5C59-4E94-A46D-D39E36B2D7C6}
+	EndGlobalSection
+EndGlobal
