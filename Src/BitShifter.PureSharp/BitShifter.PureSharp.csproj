@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <!-- <TargetFramework>net6.0</TargetFramework> -->
+    
+    <!-- #if (TargetFramework==\"net6.0\"")
+    <ImplicitUsings>enable</ImplicitUsings>
+    #else
+    <ImplicitUsings>disable</ImplicitUsings>
+    #endif
+    <Nullable>enable</Nullable> -->
+  </PropertyGroup>
+
+</Project>
