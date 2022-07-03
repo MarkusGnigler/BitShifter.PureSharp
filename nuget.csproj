@@ -22,8 +22,8 @@
     <ItemGroup>
         <None Include="README.md" Pack="true" PackagePath=""/>
         <None Include="LICENSE.md" Pack="true" PackagePath=""/>
-        <Content Include=".\Src\**\*" Exlude=".\**\bin\**;.\**\obj\**;.\artifacts\**;nuget.csproj" />
-        <!-- <Compile Remove="**\*" /> -->
+        <Content Include="**\*" Exlude="Tests\**\*;.\**\bin\**;.\**\obj\**;.\artifacts\**" />
+        <Compile Remove="Tests\**\*;.\**\bin\**;.\**\obj\**;.\artifacts\**" />
     </ItemGroup>
 
 </Project>
