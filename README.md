@@ -11,13 +11,13 @@ So I created my own library to use it in my projects.
 Available on NuGet
 
 ```
-dotnet add package BitShifter.PueSharp
+dotnet add package BitShifter.PureSharp
 ```
 
 or
 
 ```
-PM> Install-Package BitShifter.PueSharp
+PM> Install-Package BitShifter.PureSharp
 ```
 
 ## Example usage
