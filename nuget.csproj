@@ -14,7 +14,7 @@
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
 
-        <IncludeContentInPack>true</IncludeContentInPack>
+        <!-- <IncludeContentInPack>true</IncludeContentInPack> -->
         <IncludeBuildOutput>false</IncludeBuildOutput>
         <ContentTargetFolders>content</ContentTargetFolders>
     </PropertyGroup>
@@ -22,8 +22,10 @@
     <ItemGroup>
         <None Include="README.md" Pack="true" PackagePath=""/>
         <None Include="LICENSE.md" Pack="true" PackagePath=""/>
-        <Content Include=".\Src\**\*" Exlude=".\**\bin\**;.\**\obj\**;.\artifacts\**" />
-        <Compile Remove=".\**\bin\**;.\**\obj\**;.\artifacts\**" />
+        <Content Include="**\Src\**\*" Exlude="**\Tests\**\*;**\bin\**;**\obj\**;**\artifacts\**" />
+        <!-- <Content Include="**/Src\**\*" Exlude=".\Tests;.\**\bin\**;.\**\obj\**;.\artifacts\**" /> -->
+        <Compile Remove="**\Tests\**\*;**\bin\**;**\obj\**;**\artifacts\**" />
+        <!-- <Content Update=".\**\Tests" CopyToPublishDirectory="Never" /> -->
     </ItemGroup>
 
 </Project>
