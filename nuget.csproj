@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <PackageVersion>1.0.1</PackageVersion>
+        <PackageVersion>1.0.2</PackageVersion>
         <Configuration>Release</Configuration>
         <PackageId>BitShifter.PureSharp</PackageId>
         <Title>Functional concepts for C#</Title>
@@ -14,7 +14,7 @@
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
 
-        <!-- <IncludeContentInPack>true</IncludeContentInPack> -->
+        <IncludeContentInPack>true</IncludeContentInPack>
         <IncludeBuildOutput>false</IncludeBuildOutput>
         <ContentTargetFolders>content</ContentTargetFolders>
     </PropertyGroup>
@@ -22,10 +22,8 @@
     <ItemGroup>
         <None Include="README.md" Pack="true" PackagePath=""/>
         <None Include="LICENSE.md" Pack="true" PackagePath=""/>
-        <Content Include="**\Src\**\*" Exlude="**\Tests\**\*;**\bin\**;**\obj\**;**\artifacts\**" />
-        <!-- <Content Include="**/Src\**\*" Exlude=".\Tests;.\**\bin\**;.\**\obj\**;.\artifacts\**" /> -->
+        <Content Include="**\*" Exlude="**\Tests\**\*;**\bin\**;**\obj\**;**\artifacts\**" />
         <Compile Remove="**\Tests\**\*;**\bin\**;**\obj\**;**\artifacts\**" />
-        <!-- <Content Update=".\**\Tests" CopyToPublishDirectory="Never" /> -->
     </ItemGroup>
 
 </Project>
