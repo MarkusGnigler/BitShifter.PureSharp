@@ -15,13 +15,15 @@
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
 
         <IncludeContentInPack>true</IncludeContentInPack>
-        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <IncludeBuildOutput>true</IncludeBuildOutput>
         <ContentTargetFolders>content</ContentTargetFolders>
     </PropertyGroup>
 
     <ItemGroup>
         <None Include="README.md" Pack="true" PackagePath=""/>
         <None Include="LICENSE.md" Pack="true" PackagePath=""/>
+        <!-- <None Include="**\*" Exlude="**\Tests\**\*;**\bin\**;**\obj\**;**\artifacts\**" Pack="true" PackagePath=""/> -->
+        <!-- <Content Include="**\*" Exlude="**\Tests\**\*;**\bin\**;**\obj\**;**\artifacts\**" /> -->
         <Content Include="**\*" Exlude="**\Tests\**\*;**\bin\**;**\obj\**;**\artifacts\**" />
         <Compile Remove="**\Tests\**\*;**\bin\**;**\obj\**;**\artifacts\**" />
     </ItemGroup>
