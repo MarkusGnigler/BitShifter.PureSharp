@@ -33,3 +33,5 @@ int value = result
 value.Should()
       .Be(42);
 ```
+
+> Initially bootstraped with my [library template](https://github.com/MarkusGnigler/BitShifter.LibraryTemplate)
