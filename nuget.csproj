@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <PackageVersion>1.0.3</PackageVersion>
+        <PackageVersion>1.1.0</PackageVersion>
         <Configuration>Release</Configuration>
         <PackageId>BitShifter.PureSharp</PackageId>
         <Title>Functional concepts for C#</Title>
