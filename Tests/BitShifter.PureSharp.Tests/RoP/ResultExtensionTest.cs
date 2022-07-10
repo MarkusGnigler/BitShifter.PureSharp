@@ -169,6 +169,23 @@ namespace BitShifter.PureSharp.Tests.RoP
                 .Be(EXPECTED);
         }
 
+        [Fact]
+        public void ToFailure_PutResultToFailureTrack()
+        {
+            //Arrange
+            var EXPECTED = typeof(Result<User, string[]>.Failure);
+
+            Result<User, string[]> result
+                = new User(string.Empty).Succeeded<User, string[]>();
+
+            //Act
+            var sut = result.ToFailure();
+
+            //Assert
+            sut.Should()
+                .BeOfType(EXPECTED);
+        }
+
         #endregion
 
         #region [ Either ]

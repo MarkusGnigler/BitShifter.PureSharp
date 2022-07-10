@@ -13,6 +13,31 @@ namespace BitShifter.PureSharp.Tests.RoP
         #region [ Bind ]
 
         [Fact]
+        public async Task Test_Result_Bind_With_Async_Action()
+        {
+            //Arrange
+            const int EXPECTED = 666;
+
+            Func<User, Task<Result<int, Exception>>> bindAction
+                = _ => Task.FromResult(
+                    EXPECTED.Succeeded<int, Exception>());
+
+            Result<User, Exception> result
+                = ResultBuilder.GetSuccess();
+
+            //Act
+            int value = result
+                .Bind(bindAction)
+                .Match(
+                    onSuccess: x => x,
+                    onFailure: _ => 0);
+
+            //Assert
+            value.Should()
+                .Be(EXPECTED);
+        }
+        
+        [Fact]
         public async Task Test_Result_BindAsync()
         {
             //Arrange
@@ -170,6 +195,27 @@ namespace BitShifter.PureSharp.Tests.RoP
         #region [ Tee ]
 
         [Fact]
+        public async Task Test_Result_Tee_With_Success()
+        {
+            //Arrange
+            const int EXPECTED = 1;
+            int count = 0;
+
+            void teeAction(User x) => count++;
+
+            Task<Result<User, Exception>> result
+                = Task.FromResult(
+                    ResultBuilder.GetSuccess());
+
+            //Act
+            await result.Tee(teeAction);
+
+            //Assert
+            count.Should()
+                .Be(EXPECTED);
+        }
+
+        [Fact]
         public async Task Test_Result_TeeAsync_With_Success()
         {
             //Arrange
@@ -205,6 +251,48 @@ namespace BitShifter.PureSharp.Tests.RoP
 
             //Act
             await result.TeeAsync(teeAction);
+
+            //Assert
+            count.Should()
+                .Be(EXPECTED);
+        }
+
+        [Fact]
+        public async Task Test_Result_TeeFailure_With_Success()
+        {
+            //Arrange
+            const int EXPECTED = 0;
+            int count = 0;
+
+            void teeAction(Exception x) => count++;
+
+            Task<Result<User, Exception>> result
+                = Task.FromResult(
+                    ResultBuilder.GetSuccess());
+
+            //Act
+            await result.TeeFailure(teeAction);
+
+            //Assert
+            count.Should()
+                .Be(EXPECTED);
+        }
+
+        [Fact]
+        public async Task Test_Result_TeeFailure_With_Failure()
+        {
+            //Arrange
+            const int EXPECTED = 1;
+            int count = 0;
+
+            void teeAction(Exception x) => count++;
+
+            Task<Result<User, Exception>> result
+                = Task.FromResult(
+                    ResultBuilder.GetFailed());
+
+            //Act
+            await result.TeeFailure(teeAction);
 
             //Assert
             count.Should()

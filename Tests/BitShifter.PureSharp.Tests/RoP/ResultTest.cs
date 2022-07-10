@@ -119,6 +119,40 @@ namespace BitShifter.PureSharp.Tests.RoP
                 .BeOfType(EXPECTED);
         }
 
+        [Fact]
+        public void ToString_On_Success_Have_Right_Result()
+        {
+            //Arrange
+            var EXPECTED = "SUCCESS: User { Name =  }";
+
+            Result<User, string[]> result
+                = new User(string.Empty).Succeeded<User, string[]>();
+
+            //Act
+            string sut = result.ToString()!;
+
+            //Assert
+            sut.Should()
+                .Be(EXPECTED);
+        }
+
+        [Fact]
+        public void ToString_On_Failure_Have_Right_Result()
+        {
+            //Arrange
+            var EXPECTED = "FAILURE: System.String[]";
+
+            Result<User, string[]> result
+                = new[] { string.Empty }.Failed<User, string[]>();
+
+            //Act
+            string sut = result.ToString()!;
+
+            //Assert
+            sut.Should()
+                .Be(EXPECTED);
+        }
+
         #endregion
 
         #region [ Querying / Is operator ]
